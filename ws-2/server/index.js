@@ -5,7 +5,14 @@ const httpServer = createServer()
 
 const io = new Server(httpServer, {
     cors: {
-        origin: process.env.NODE_ENV === "production" ? false : ["http://localhost:3001", "http://127.0.0.1:3001"]
+        origin: process.env.NODE_ENV === "production" ? false : [
+          "http://localhost:3000",
+          "http://localhost:3001",
+          "http://localhost:3002",
+          "http://127.0.0.1:3000",
+          "http://127.0.0.1:3001",
+          "http://127.0.0.1:3002"
+        ]
     }
 })
 
